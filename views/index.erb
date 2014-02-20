@@ -1,0 +1,12 @@
+<br><br><br>
+<div style='text-align:left'>
+<% unless @agent.nil?%>
+	<h2>HTTP Request Header ::</h2>
+  <% @agent.page.header.each do |header| %>
+	  <tr><td><%= header[0] %></td>
+	<td><%= header[1] %></td></tr><br/>
+	<% end %>
+	<h2> HTTP Response Header </h2>
+	<xmp> <%= @agent.page.body %> </xmp>
+<% end %>
+</div>

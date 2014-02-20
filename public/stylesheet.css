@@ -1,0 +1,42 @@
+#wrapper{
+  width: 960px;
+  margin: 0 auto;
+}
+
+body { 
+  background: url(/videobackground14.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: #ccc;
+
+}
+input[type=text] {
+  padding: 0;
+  height: 40px;
+  position: relative;
+  /*left: 0;*/
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-color: rgba(0,0,0,.15);
+  background-color: white;
+  font-size: 40px;
+  margin-top: 100px;
+  background-color: transparent; 
+  border-style: solid;
+  border-width: 0px 0px 5px 0px;
+  color: #ccc;
+}
+#box {
+  border: none;
+  border-bottom: 0.1em solid #ccc;
+  font-size: 2em;
+  outline: none;
+  padding: 0.5em;
+  margin-top: 100px;
+}
+
+#box::-webkit-input-placeholder { font-style: italic; }
+#box::-moz-placeholder { font-style: italic; }
+#box::-ms-input-placeholder { font-style: italic; }

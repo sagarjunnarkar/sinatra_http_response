@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf8">
+	<title><%= "#{@title || SITE_TITLE}" %></title>
+	<link href="/stylesheet.css" rel="stylesheet">
+	<script type="text/javascript">
+	function sync()
+{
+  var n1 = document.getElementById('box');
+  var n2 = document.getElementById('action');
+  var m = n1.value.replace(/^https?:\/\//,"").replace(/www\./,"").split("/")[0];
+  console.log(m);
+  n2.href = '/'+m;
+}
+</script>
+</head>
+<body id = 'wrapper'>
+	<header>
+		<hgroup>
+			<h1><a href="/"><%= SITE_TITLE %></a></h1>
+			<h2><%= SITE_DESCRIPTION %></h2>
+		</hgroup>
+	</header>
+   <style type="text/css">
+   body {
+   	font-family: Arial, sans-serif;
+   }
+
+   #container {
+   	margin: 120px auto;
+   	text-align: center;
+   }
+
+   .button {
+   	-webkit-transform: rotateX( 35deg );
+   	position: relative;
+   	display: inline-block;
+   	width: 100px;
+   	padding: 42px 15px;
+   	margin: 0px 10px;
+   	background-color: #C91826;
+   	color: #fff;
+   	font-weight: bold;
+   	font-size: 40px;
+   	text-decoration: none;
+   	text-align: center;
+   	text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+
+   	border: 1px solid;
+   	border-color: #B21522;
+   	border-radius: 78px;
+   	-moz-border-radius: 78px;
+   	-webkit-border-radius: 78px;
+
+   	box-shadow: 		inset 0px -4px 5px rgba(255,255,255,0.2),
+   	inset 0px 1px 5px rgba(255,255,255,0.2),
+   	/**/
+   	0px 12px 0px #231F20,
+   	0px 14px 0px #231F20,
+   	0px 16px 0px #231F20,
+   	/**/
+   	0px 8px 5px rgba(0,0,0,0.5);
+
+   	-moz-box-shadow: 	inset 0px -4px 5px rgba(255,255,255,0.2),
+   	inset 0px 1px 5px rgba(255,255,255,0.2),
+   	/**/
+   	0px 12px 0px #231F20,
+   	0px 14px 0px #231F20,
+   	0px 16px 0px #231F20,
+   	/**/
+   	0px 8px 5px rgba(0,0,0,0.5);
+
+   	-webkit-box-shadow: inset 5px -4px 5px rgba(255,255,255,0.2),
+   	inset 5px 1px 5px rgba(255,255,255,0.2),
+   	/**/
+   	0px 12px 0px #231F20,
+   	0px 14px 0px #231F20,
+   	0px 16px 0px #231F20;
+   }
+
+   .button:hover {
+   	background-color: #B21522;
+   	color: #e3e3e3;
+   }
+
+   .button:active {
+   	top: 8px;
+   	box-shadow: 		inset 0px 4px 5px rgba(255,255,255,0.4),
+   	inset 0px -1px 5px rgba(255,255,255,0.2),
+   	/**/
+   	0px 8px 0px #231F20,
+   	/**/
+   	0px 9px 5px rgba(0,0,0,0.5);
+
+   	-moz-box-shadow: 	inset 0px 4px 5px rgba(255,255,255,0.4),
+   	inset 0px -1px 5px rgba(255,255,255,0.2),
+   	/**/
+   	0px 8px 0px #231F20,
+   	/**/
+   	0px 9px 5px rgba(0,0,0,0.5);
+
+   	-webkit-box-shadow: inset 0px 4px 5px rgba(255,255,255,0.4),
+   	inset 0px -1px 5px rgba(255,255,255,0.2),
+   	/**/
+   	0px 8px 0px #231F20,
+   	/**/
+   	0px 9px 5px rgba(0,0,0,0.5);
+   }
+    </style>
+	<div id="main" style='text-align:center;' >
+  <input type="text" name="website" id="box" value="" placeholder="Type any url!" autofocus onkeyup="sync()"/>
+  <div id="container">
+  <a class="button" href="" id='action' onclick="sync()" >Push</a>
+		<%= yield %>
+	</div>
+</body>
+</html>
